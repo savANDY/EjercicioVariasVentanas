@@ -18,9 +18,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-public class PRINCIPAL {
+public class PRINCIPAL extends JFrame {
 
 	private JFrame frame;
+	private JButton btnAbrirFormulario;
 
 	/**
 	 * Launch the application.
@@ -58,11 +59,11 @@ public class PRINCIPAL {
 		comboBox.setBounds(65, 108, 113, 20);
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnAbrirFormulario = new JButton("Abrir formulario");
+		btnAbrirFormulario = new JButton("Abrir formulario");
 		btnAbrirFormulario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				//DATOS hija = new DATOS(this,true);
+				//accion();
 				
 			}
 		});
