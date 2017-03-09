@@ -33,7 +33,7 @@ public class DATOS extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DATOS.class.getResource("/imagenes/sec.png")));
 		setTitle("Datos");
 		
-		setBounds(100, 100, 250, 300);
+		setBounds(650, 350, 250, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
