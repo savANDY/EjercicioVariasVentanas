@@ -64,6 +64,8 @@ public class PRINCIPAL extends JFrame {
 		
 		lista = new JComboBox();
 		lista.setBounds(31, 108, 177, 20);
+		lista.addItem("Pino sur 12.5");
+		lista.addItem("Roble norte 7.3");
 		frame.getContentPane().add(lista);
 		
 		btnInsertarArbol = new JButton("Insertar arbol");
@@ -108,13 +110,16 @@ public class PRINCIPAL extends JFrame {
 		JMenuItem mntmBorrarTodos = new JMenuItem("Borrar todos");
 		mnGestion.add(mntmBorrarTodos);
 		
-		JButton btnBorrarArbolSeleccionado = new JButton("Borrar arbol seleccionado");
-		btnBorrarArbolSeleccionado.addActionListener(new ActionListener() {
+		JButton btnBorrarSeleccionado = new JButton("Borrar seleccionado");
+		btnBorrarSeleccionado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				lista.remove(1);;
+				
 			}
 		});
-		btnBorrarArbolSeleccionado.setBounds(31, 210, 177, 23);
-		frame.getContentPane().add(btnBorrarArbolSeleccionado);
+		btnBorrarSeleccionado.setBounds(31, 210, 177, 23);
+		frame.getContentPane().add(btnBorrarSeleccionado);
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(PRINCIPAL.class.getResource("/imagenes/background-grande.jpg")));
