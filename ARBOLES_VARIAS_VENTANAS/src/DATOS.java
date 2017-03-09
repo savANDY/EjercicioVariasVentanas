@@ -10,13 +10,15 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DATOS extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField nombre;
+	private JTextField zona;
+	private JTextField altura;
 
 
 	/**
@@ -60,22 +62,22 @@ public class DATOS extends JDialog {
 			contentPanel.add(txtpnAlturaMedia);
 		}
 		{
-			textField = new JTextField();
-			textField.setBounds(138, 85, 86, 20);
-			contentPanel.add(textField);
-			textField.setColumns(10);
+			nombre = new JTextField();
+			nombre.setBounds(138, 85, 86, 20);
+			contentPanel.add(nombre);
+			nombre.setColumns(10);
 		}
 		{
-			textField_1 = new JTextField();
-			textField_1.setColumns(10);
-			textField_1.setBounds(138, 116, 86, 20);
-			contentPanel.add(textField_1);
+			zona = new JTextField();
+			zona.setColumns(10);
+			zona.setBounds(138, 116, 86, 20);
+			contentPanel.add(zona);
 		}
 		{
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(138, 147, 86, 20);
-			contentPanel.add(textField_2);
+			altura = new JTextField();
+			altura.setColumns(10);
+			altura.setBounds(138, 147, 86, 20);
+			contentPanel.add(altura);
 		}
 		{
 			JTextPane txtpnIntroduccinDeDatos = new JTextPane();
@@ -88,6 +90,13 @@ public class DATOS extends JDialog {
 		}
 		{
 			JButton btnInsertarrbol = new JButton("Insertar \u00E1rbol");
+			btnInsertarrbol.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					
+					accion();
+					
+				}
+			});
 			btnInsertarrbol.setBounds(61, 204, 123, 23);
 			contentPanel.add(btnInsertarrbol);
 		}
@@ -97,6 +106,16 @@ public class DATOS extends JDialog {
 			label.setBounds(0, 0, 234, 261);
 			contentPanel.add(label);
 		}
+	}
+
+
+	public void accion() {
+		
+		ARBOL arbol = new ARBOL(nombre.getText(),zona.getText(),Double.parseDouble(altura.getText()));
+				
+		((PRINCIPAL) this.getParent()).aniadir(arbol);
+		this.dispose();
+		
 	}
 
 }

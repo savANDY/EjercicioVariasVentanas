@@ -17,13 +17,15 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class PRINCIPAL extends JFrame {
 
 	private JFrame frame;
 	private JButton btnInsertarArbol;
 	private JTextPane txtListaDeArboles;
-	private JComboBox comboBox;
+	private JComboBox lista;
 
 	/**
 	 * Launch the application.
@@ -60,19 +62,17 @@ public class PRINCIPAL extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		comboBox = new JComboBox();
-		comboBox.setBounds(65, 108, 113, 20);
-		frame.getContentPane().add(comboBox);
+		lista = new JComboBox();
+		lista.setBounds(31, 108, 177, 20);
+		frame.getContentPane().add(lista);
 		
 		btnInsertarArbol = new JButton("Insertar arbol");
 		btnInsertarArbol.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-								
+			public void actionPerformed(ActionEvent arg0) {				
 				accion();
-				
 			}
 		});
-		btnInsertarArbol.setBounds(57, 176, 134, 23);
+		btnInsertarArbol.setBounds(31, 176, 177, 23);
 		frame.getContentPane().add(btnInsertarArbol);
 		
 		txtListaDeArboles = new JTextPane();
@@ -91,6 +91,15 @@ public class PRINCIPAL extends JFrame {
 		menuBar.add(mnGestion);
 		
 		JMenuItem mntmInsertar = new JMenuItem("Insertar");
+		mntmInsertar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				accion();
+				
+			}
+		});
+		mntmInsertar.addMouseListener(new MouseAdapter() {
+		});
 		mnGestion.add(mntmInsertar);
 		
 		JMenuItem mntmBorrar = new JMenuItem("Borrar");
@@ -104,7 +113,7 @@ public class PRINCIPAL extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnBorrarArbolSeleccionado.setBounds(57, 210, 134, 23);
+		btnBorrarArbolSeleccionado.setBounds(31, 210, 177, 23);
 		frame.getContentPane().add(btnBorrarArbolSeleccionado);
 		
 		JLabel label = new JLabel("");
@@ -117,6 +126,12 @@ public class PRINCIPAL extends JFrame {
 		
 		DATOS hija = new DATOS(this, true);
 		hija.setVisible(true);
+		
+	}
+
+	public void aniadir(ARBOL arbol) {
+		
+		lista.addItem(arbol.nombre + " " + arbol.zona + " " + arbol.altura);
 		
 	}
 }
