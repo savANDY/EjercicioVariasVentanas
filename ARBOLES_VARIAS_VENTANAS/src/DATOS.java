@@ -30,7 +30,7 @@ public class DATOS extends JDialog {
 		
 		super(parent,modal);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(DATOS.class.getResource("/imagenes/favicon-1.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DATOS.class.getResource("/imagenes/sec.png")));
 		setTitle("Datos");
 		
 		setBounds(100, 100, 250, 300);
