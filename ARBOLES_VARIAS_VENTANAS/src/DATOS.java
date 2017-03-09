@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class DATOS extends JDialog {
 
@@ -28,6 +29,9 @@ public class DATOS extends JDialog {
 	public DATOS(javax.swing.JFrame parent, boolean modal) {
 		
 		super(parent,modal);
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DATOS.class.getResource("/imagenes/favicon-1.jpg")));
+		setTitle("Datos");
 		
 		setBounds(100, 100, 250, 300);
 		getContentPane().setLayout(new BorderLayout());
