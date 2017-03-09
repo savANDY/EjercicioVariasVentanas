@@ -22,7 +22,7 @@ import java.awt.event.MouseEvent;
 
 public class PRINCIPAL extends JFrame {
 
-	private JFrame frame;
+	private JFrame frmListaDeArboles;
 	private JButton btnInsertarArbol;
 	private JTextPane txtListaDeArboles;
 	private JComboBox lista;
@@ -35,7 +35,7 @@ public class PRINCIPAL extends JFrame {
 			public void run() {
 				try {
 					PRINCIPAL window = new PRINCIPAL();
-					window.frame.setVisible(true);
+					window.frmListaDeArboles.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -57,16 +57,17 @@ public class PRINCIPAL extends JFrame {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 253, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmListaDeArboles = new JFrame();
+		frmListaDeArboles.setTitle("Arboles");
+		frmListaDeArboles.setBounds(100, 100, 253, 300);
+		frmListaDeArboles.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmListaDeArboles.getContentPane().setLayout(null);
 		
 		lista = new JComboBox();
 		lista.setBounds(31, 108, 177, 20);
 		lista.addItem("Pino sur 12.5");
 		lista.addItem("Roble norte 7.3");
-		frame.getContentPane().add(lista);
+		frmListaDeArboles.getContentPane().add(lista);
 		
 		btnInsertarArbol = new JButton("Insertar arbol");
 		btnInsertarArbol.addActionListener(new ActionListener() {
@@ -75,7 +76,7 @@ public class PRINCIPAL extends JFrame {
 			}
 		});
 		btnInsertarArbol.setBounds(31, 176, 177, 23);
-		frame.getContentPane().add(btnInsertarArbol);
+		frmListaDeArboles.getContentPane().add(btnInsertarArbol);
 		
 		txtListaDeArboles = new JTextPane();
 		txtListaDeArboles.setFont(new Font("Consolas", Font.BOLD, 15));
@@ -83,11 +84,11 @@ public class PRINCIPAL extends JFrame {
 		txtListaDeArboles.setText("LISTA DE ARBOLES");
 		txtListaDeArboles.setOpaque(false);
 		txtListaDeArboles.setBounds(49, 60, 142, 20);
-		frame.getContentPane().add(txtListaDeArboles);
+		frmListaDeArboles.getContentPane().add(txtListaDeArboles);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 237, 21);
-		frame.getContentPane().add(menuBar);
+		frmListaDeArboles.getContentPane().add(menuBar);
 		
 		JMenu mnGestion = new JMenu("Gestion");
 		menuBar.add(mnGestion);
@@ -114,17 +115,23 @@ public class PRINCIPAL extends JFrame {
 		btnBorrarSeleccionado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				lista.remove(1);;
+				borrarArbol();
 				
 			}
 		});
 		btnBorrarSeleccionado.setBounds(31, 210, 177, 23);
-		frame.getContentPane().add(btnBorrarSeleccionado);
+		frmListaDeArboles.getContentPane().add(btnBorrarSeleccionado);
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(PRINCIPAL.class.getResource("/imagenes/background-grande.jpg")));
 		label.setBounds(0, 0, 237, 261);
-		frame.getContentPane().add(label);
+		frmListaDeArboles.getContentPane().add(label);
+	}
+
+	protected void borrarArbol() {
+		
+		lista.removeItem(lista.getSelectedItem());
+		
 	}
 
 	public void accion() {
