@@ -59,7 +59,7 @@ public class PRINCIPAL extends JFrame {
 	private void initialize() {
 		frmListaDeArboles = new JFrame();
 		frmListaDeArboles.setTitle("Arboles");
-		frmListaDeArboles.setBounds(100, 100, 253, 300);
+		frmListaDeArboles.setBounds(600, 300, 253, 300);
 		frmListaDeArboles.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmListaDeArboles.getContentPane().setLayout(null);
 		
@@ -106,9 +106,19 @@ public class PRINCIPAL extends JFrame {
 		mnGestion.add(mntmInsertar);
 		
 		JMenuItem mntmBorrar = new JMenuItem("Borrar");
+		mntmBorrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				borrarArbol();
+			}
+		});
 		mnGestion.add(mntmBorrar);
 		
 		JMenuItem mntmBorrarTodos = new JMenuItem("Borrar todos");
+		mntmBorrarTodos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lista.removeAllItems();
+			}
+		});
 		mnGestion.add(mntmBorrarTodos);
 		
 		JButton btnBorrarSeleccionado = new JButton("Borrar seleccionado");
