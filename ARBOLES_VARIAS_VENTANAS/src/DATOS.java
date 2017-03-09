@@ -18,28 +18,15 @@ public class DATOS extends JDialog {
 	private JTextField textField_1;
 	private JTextField textField_2;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			DATOS dialog = new DATOS();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Create the dialog.
 	 */
-	
-	
-	
-	
-	
-	public DATOS() {
+
+	public DATOS(javax.swing.JFrame parent, boolean modal) {
+		
+		super(parent,modal);
+		
 		setBounds(100, 100, 250, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
