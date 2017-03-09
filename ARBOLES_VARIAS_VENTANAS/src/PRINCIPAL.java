@@ -21,7 +21,9 @@ import javax.swing.JMenuItem;
 public class PRINCIPAL extends JFrame {
 
 	private JFrame frame;
-	private JButton btnAbrirFormulario;
+	private JButton btnInsertarArbol;
+	private JTextPane txtListaDeArboles;
+	private JComboBox comboBox;
 
 	/**
 	 * Launch the application.
@@ -46,6 +48,9 @@ public class PRINCIPAL extends JFrame {
 		initialize();
 	}
 
+
+	
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -55,22 +60,22 @@ public class PRINCIPAL extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox();
 		comboBox.setBounds(65, 108, 113, 20);
 		frame.getContentPane().add(comboBox);
 		
-		btnAbrirFormulario = new JButton("Abrir formulario");
-		btnAbrirFormulario.addActionListener(new ActionListener() {
+		btnInsertarArbol = new JButton("Insertar arbol");
+		btnInsertarArbol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				//accion();
+								
+				accion();
 				
 			}
 		});
-		btnAbrirFormulario.setBounds(57, 176, 134, 23);
-		frame.getContentPane().add(btnAbrirFormulario);
+		btnInsertarArbol.setBounds(57, 176, 134, 23);
+		frame.getContentPane().add(btnInsertarArbol);
 		
-		JTextPane txtListaDeArboles = new JTextPane();
+		txtListaDeArboles = new JTextPane();
 		txtListaDeArboles.setFont(new Font("Consolas", Font.BOLD, 15));
 		txtListaDeArboles.setEditable(false);
 		txtListaDeArboles.setText("LISTA DE ARBOLES");
@@ -94,9 +99,24 @@ public class PRINCIPAL extends JFrame {
 		JMenuItem mntmBorrarTodos = new JMenuItem("Borrar todos");
 		mnGestion.add(mntmBorrarTodos);
 		
+		JButton btnBorrarArbolSeleccionado = new JButton("Borrar arbol seleccionado");
+		btnBorrarArbolSeleccionado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnBorrarArbolSeleccionado.setBounds(57, 210, 134, 23);
+		frame.getContentPane().add(btnBorrarArbolSeleccionado);
+		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(PRINCIPAL.class.getResource("/imagenes/background-grande.jpg")));
 		label.setBounds(0, 0, 237, 261);
 		frame.getContentPane().add(label);
+	}
+
+	public void accion() {
+		
+		DATOS hija = new DATOS(this, true);
+		hija.setVisible(true);
+		
 	}
 }
