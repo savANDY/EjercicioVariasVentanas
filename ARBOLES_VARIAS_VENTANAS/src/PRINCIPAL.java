@@ -35,6 +35,7 @@ public class PRINCIPAL extends JFrame {
 			public void run() {
 				try {
 					PRINCIPAL window = new PRINCIPAL();
+					//window.setLocationRelativeTo(null); //para ponerla en el centro
 					window.frmListaDeArboles.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -72,7 +73,7 @@ public class PRINCIPAL extends JFrame {
 		btnInsertarArbol = new JButton("Insertar arbol");
 		btnInsertarArbol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {				
-				accion();
+				accionInsertar();
 			}
 		});
 		btnInsertarArbol.setBounds(31, 176, 177, 23);
@@ -97,7 +98,7 @@ public class PRINCIPAL extends JFrame {
 		mntmInsertar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				accion();
+				accionInsertar();
 				
 			}
 		});
@@ -144,7 +145,7 @@ public class PRINCIPAL extends JFrame {
 		
 	}
 
-	public void accion() {
+	public void accionInsertar() {
 		
 		DATOS hija = new DATOS(this, true);
 		hija.setVisible(true);
