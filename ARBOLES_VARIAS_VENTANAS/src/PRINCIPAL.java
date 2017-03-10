@@ -109,7 +109,7 @@ public class PRINCIPAL extends JFrame {
 		JMenuItem mntmBorrar = new JMenuItem("Borrar");
 		mntmBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				borrarArbol();
+				accionBorrar();
 			}
 		});
 		mnGestion.add(mntmBorrar);
@@ -126,7 +126,7 @@ public class PRINCIPAL extends JFrame {
 		btnBorrarSeleccionado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				borrarArbol();
+				accionBorrar();
 				
 			}
 		});
@@ -139,7 +139,7 @@ public class PRINCIPAL extends JFrame {
 		frmListaDeArboles.getContentPane().add(label);
 	}
 
-	protected void borrarArbol() {
+	protected void accionBorrar() {
 		
 		lista.removeItem(lista.getSelectedItem());
 		
