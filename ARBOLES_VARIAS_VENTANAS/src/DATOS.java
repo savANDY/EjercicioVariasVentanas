@@ -1,5 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -16,6 +15,10 @@ import java.awt.Toolkit;
 
 public class DATOS extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1770908975303830668L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField nombre;
 	private JTextField zona;
